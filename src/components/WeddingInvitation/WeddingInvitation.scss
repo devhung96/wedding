@@ -1,0 +1,42 @@
+.wedding-invitation {
+  background-image: url("https://content.pancake.vn/1/f4/b3/31/29/5e52532f8d236d927a9762642e2c753751f10aef7752d7bc5a82b74e.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  position: relative;
+  background-color: red;
+
+  .title {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 2%;
+
+    color: rgba(0, 0, 0, 1);
+    font-family: var(--font-utm-azkia);
+    font-size: 55px;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 1);
+    transform: rotate(358deg) perspective(1044px);
+  }
+
+  .invitation-content {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+
+    .divider {
+      border: 0.5px solid rgba(0, 0, 0, 1);
+      margin: 5px 0;
+    }
+    .sub-title, .time, .date {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 500
+    }
+    .time, .date {
+       font-size: 26px;
+      font-weight: 600;
+    }
+  }
+}

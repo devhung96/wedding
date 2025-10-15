@@ -1,0 +1,42 @@
+@import 'normalize.css';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900|Barlow:100,300,400,700,900|Arial:100,300,400,700,900&display=swap');
+
+/* Custom Fonts */
+@font-face {
+  font-family: "UTM-Azkia";
+  src: url("https://statics.pancake.vn/web-media/35/7a/ab/a5/2bcc8b3414fa20782f68d8d552b13313f2a24e5b267a97b3cf3a5ec3.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "UTM-Cafeta";
+  src: url("https://statics.pancake.vn/web-media/04/eb/01/7a/e19221a44fabb6fd54c6339fd43b1c25ebbe20e97f6633beed4cbc79.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ephesis-Regular";
+  src: url("https://statics.pancake.vn/web-media/65/48/68/4f/ca5a0c732f276b6fef504eddf0e2d6cdf65cf198b0440dde6d90c5a8.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Font Families */
+:root {
+  --font-roboto: 'Roboto', sans-serif;
+  --font-barlow: 'Barlow', sans-serif;
+  --font-arial: 'Arial', sans-serif;
+  --font-utm-azkia: 'UTM-Azkia', serif;
+  --font-utm-cafeta: 'UTM-Cafeta', serif;
+  --font-ephesis: 'Ephesis-Regular', cursive;
+}
+
+/* Base Font Settings */
+body {
+  font-family: var(--font-roboto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.5;
+}
