@@ -1,0 +1,100 @@
+.wedding-family {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  color: #2e2e2e;
+  padding: 40px 20px;
+  background: #fff;
+
+  .quote {
+    font-style: italic;
+    margin-bottom: 30px;
+    font-family: var(--font-ephesis);
+    font-size: 26px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .families {
+    justify-content: space-around;
+    gap: 100px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+
+    .family {
+      width: 50%;
+      h4 {
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-family: var(--font-utm-cafeta);
+        font-size: 20px;
+        text-align: center;
+      }
+
+      p {
+        margin: 0;
+        line-height: 1.4;
+        font-size: 0.95rem;
+        font-family: var(--font-utm-cafeta);
+        font-size: 16px;
+        text-align: center;
+      }
+    }
+  }
+
+  .heart {
+    background-image: url("https://content.pancake.vn/1/s546x546/fwebp/9f/06/d9/3a/4f89683f3c43ed295fd5da05de67d0db47eb178a7d68b96e19166749.png");
+    background-size: cover;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    margin-top: -46px;
+  }
+
+  .couple {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -40px;
+    flex-wrap: wrap;
+
+    .groom,
+    .bride {
+      h5 {
+        font-weight: 500;
+        margin-bottom: 0;
+        font-family: var(--font-utm-cafeta);
+        font-size: 20px;
+        text-align: center;
+      }
+
+      h3 {
+        font-family: var(--font-ephesis);
+        font-size: 2.4rem;
+        color: #2c2c2c;
+        margin-bottom: 15px;
+      }
+    }
+    .couple-image {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border-color: rgba(229, 231, 235, 1);
+      border-style: solid;
+      background: rgba(0, 48, 2, 0.8);
+      padding: 10px;
+      border-radius: 6px;
+      div {
+        width: 50%;
+        height: 180px;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 6px;
+        
+      }
+    }
+  }
+}
