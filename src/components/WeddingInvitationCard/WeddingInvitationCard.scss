@@ -1,0 +1,76 @@
+.wedding-invitation-card {
+  max-width: 1200px;
+  padding: 0 20px;
+  text-align: center;
+
+  .line-container {
+    border-color: rgba(83, 96, 119, 1);
+    border-style: solid;
+    border-width: 1px;
+    width: 130px;
+  }
+
+  .invitation-header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+      font-family: var(--font-ephesis);
+      font-size: 38px;
+      font-weight: normal;
+      color: #000;
+    }
+
+    .subtitle {
+      border-color: rgba(229, 231, 235, 1);
+      border-style: solid;
+      font-family: "Arial", sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+
+  .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+
+    .photo-item {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 4px;
+      aspect-ratio: 2/3;
+
+      &:nth-child(2) {
+        aspect-ratio: 3/4;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .wedding-invitation-card {
+    .photo-gallery {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  }
+}
