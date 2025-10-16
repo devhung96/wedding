@@ -14,7 +14,6 @@ const WeddingAlbum: React.FC<WeddingAlbumProps> = ({ title, images }) => {
   return (
     <div className="wedding-album">
       <div className="album-header">
-        <div className="line-left"></div>
         <h2 className="title">{title}</h2>
         <div className="line-right"></div>
       </div>

@@ -1,12 +1,12 @@
-import React from 'react';
-import './WeddingParty.scss';
+import React from "react";
+import "./WeddingParty.scss";
 
 interface WeddingPartyProps {
   title: string;
   time: string;
   date: string;
   lunarDate: string;
-  location:string;
+  location: string;
   mapUrl: string;
 }
 
@@ -27,7 +27,7 @@ const WeddingParty: React.FC<WeddingPartyProps> = ({
       <div className="location">
         <div className="address">{location}</div>
       </div>
-        <div className="location-card">
+      <div className="location-card">
         <div className="map-container">
           <iframe
             src={mapUrl}
@@ -39,17 +39,10 @@ const WeddingParty: React.FC<WeddingPartyProps> = ({
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-
-        <a
-          href={mapUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="map-button"
-        >
-          XEM TRÊN GOOGLE MAP
-        </a>
+        <div className="location-action">
+          <button className="confirm-button">XÁC NHẬN THAM DỰ</button>
+        </div>
       </div>
-      <button className="confirm-button">XÁC NHẬN THAM DỰ</button>
     </div>
   );
 };

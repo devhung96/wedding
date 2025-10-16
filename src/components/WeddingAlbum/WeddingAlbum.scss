@@ -19,9 +19,8 @@
     }
 
     .title {
-      font-family: 'Pinyon Script', cursive;
-      font-size: 36px;
-      font-weight: normal;
+      font-family: var(--font-ephesis);
+      font-size: 32px;
       margin: 0;
       white-space: nowrap;
     }

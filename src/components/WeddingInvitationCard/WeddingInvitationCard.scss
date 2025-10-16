@@ -18,7 +18,7 @@
 
     .title {
       font-family: var(--font-ephesis);
-      font-size: 38px;
+      font-size: 36px;
       font-weight: normal;
       color: #000;
     }
@@ -30,7 +30,14 @@
       font-size: 13px;
       letter-spacing: 1px;
       text-align: center;
+      margin-top: -10px;
     }
+  }
+  .invitation-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
   }
 
   .photo-gallery {

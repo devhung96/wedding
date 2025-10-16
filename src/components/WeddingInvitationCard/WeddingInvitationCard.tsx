@@ -1,5 +1,5 @@
-import React from 'react';
-import './WeddingInvitationCard.scss';
+import React from "react";
+import "./WeddingInvitationCard.scss";
 
 interface WeddingInvitationCardProps {
   title: string;
@@ -15,7 +15,7 @@ interface WeddingInvitationCardProps {
 const WeddingInvitationCard: React.FC<WeddingInvitationCardProps> = ({
   title,
   subtitle,
-  images
+  images,
 }) => {
   return (
     <div className="wedding-invitation-card">
@@ -31,7 +31,9 @@ const WeddingInvitationCard: React.FC<WeddingInvitationCardProps> = ({
           </div>
         ))}
       </div>
-      
+      <div className="invitation-footer">
+        <div className="line-container"></div>
+      </div>
     </div>
   );
 };
