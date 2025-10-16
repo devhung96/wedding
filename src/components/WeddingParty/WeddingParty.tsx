@@ -8,6 +8,7 @@ interface WeddingPartyProps {
   lunarDate: string;
   location: string;
   mapUrl: string;
+  onConfirm: () => void;
 }
 
 const WeddingParty: React.FC<WeddingPartyProps> = ({
@@ -17,6 +18,7 @@ const WeddingParty: React.FC<WeddingPartyProps> = ({
   lunarDate,
   location,
   mapUrl,
+  onConfirm,
 }) => {
   return (
     <div className="wedding-party">
@@ -40,7 +42,9 @@ const WeddingParty: React.FC<WeddingPartyProps> = ({
           ></iframe>
         </div>
         <div className="location-action">
-          <button className="confirm-button">XÁC NHẬN THAM DỰ</button>
+          <button className="confirm-button" onClick={onConfirm}>
+            XÁC NHẬN THAM DỰ
+          </button>
         </div>
       </div>
     </div>

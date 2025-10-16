@@ -2,7 +2,7 @@
   background-image: url("https://content.pancake.vn/1/f4/b3/31/29/5e52532f8d236d927a9762642e2c753751f10aef7752d7bc5a82b74e.jpg");
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: 90vh;
   position: relative;
 
   .title {
@@ -13,7 +13,7 @@
 
     color: rgba(0, 0, 0, 1);
     font-family: var(--font-utm-azkia);
-    font-size: 55px;
+    font-size: 3.25rem;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(255, 255, 255, 1);
     transform: rotate(358deg) perspective(1044px);
@@ -29,7 +29,7 @@
       margin: 5px 0;
     }
     .sub-title, .time, .date {
-      font-size: 20px;
+      font-size: 1.25rem;
       text-align: center;
       font-weight: 500;
     }
@@ -37,7 +37,7 @@
       font-family: var(--font-barlow);
     }
     .time, .date {
-       font-size: 26px;
+       font-size: 1.625rem;
       font-weight: 600;
     }
   }
