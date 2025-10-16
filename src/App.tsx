@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import "./App.scss";
-import WeddingFamily from "./components/WeddingFamily/WeddingFamily";
-import WeddingInvitationCard from "./components/WeddingInvitationCard/WeddingInvitationCard";
-import WeddingParty from "./components/WeddingParty/WeddingParty";
-import WeddingAlbum from "./components/WeddingAlbum/WeddingAlbum";
-import WeddingInvitation from "./components/WeddingInvitation";
-import ConfirmationModal from "./components/WeddingParty/ConfirmationModal";
+import { useState } from 'react';
+import './App.scss';
+import WeddingInvitation from './components/WeddingInvitation/WeddingInvitation';
+import WeddingInvitationCard from './components/WeddingInvitationCard/WeddingInvitationCard';
+import WeddingParty from './components/WeddingParty/WeddingParty';
+import WeddingFamily from './components/WeddingFamily/WeddingFamily';
+import WeddingAlbum from './components/WeddingAlbum/WeddingAlbum';
+import ConfirmationModal from './components/WeddingParty/ConfirmationModal';
+import WishModal from './components/WeddingParty/WishModal';
 
 // Import images
 import DucHung from "./assets/images/DucHung.jpg";
@@ -17,12 +18,28 @@ function App() {
     side: 'bride' as 'bride' | 'groom'
   });
 
+  const [wishModalOpen, setWishModalOpen] = useState(false);
+
   const handleOpenModal = (side: 'bride' | 'groom') => {
-    setModalState({ isOpen: true, side });
+    setModalState({
+      isOpen: true,
+      side
+    });
   };
 
   const handleCloseModal = () => {
-    setModalState(prev => ({ ...prev, isOpen: false }));
+    setModalState({
+      ...modalState,
+      isOpen: false
+    });
+  };
+
+  const handleOpenWishModal = () => {
+    setWishModalOpen(true);
+  };
+
+  const handleCloseWishModal = () => {
+    setWishModalOpen(false);
   };
 
   return (
@@ -74,6 +91,15 @@ function App() {
         onClose={handleCloseModal}
         side={modalState.side}
       />
+      <WishModal
+        isOpen={wishModalOpen}
+        onClose={handleCloseWishModal}
+      />
+      <div className="floating-button">
+        <button onClick={handleOpenWishModal}>
+          Gửi lời chúc
+        </button>
+      </div>
     </>
   );
 }
