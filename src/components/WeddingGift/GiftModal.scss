@@ -16,6 +16,8 @@
     padding: 20px 0;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    padding-right: 43px;
+    padding-left: 43px;
     
     &::-webkit-scrollbar {
       height: 8px;
