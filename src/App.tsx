@@ -5,6 +5,7 @@ import WeddingInvitationCard from './components/WeddingInvitationCard/WeddingInv
 import WeddingParty from './components/WeddingParty/WeddingParty';
 import WeddingFamily from './components/WeddingFamily/WeddingFamily';
 import WeddingAlbum from './components/WeddingAlbum/WeddingAlbum';
+import WeddingGift from './components/WeddingGift/WeddingGift';
 import ConfirmationModal from './components/WeddingParty/ConfirmationModal';
 import WishModal from './components/WeddingParty/WishModal';
 
@@ -84,7 +85,9 @@ function App() {
             { src: DucHung, alt: "Wedding photo 1", className: "large" },
           ]}
         />
+        <WeddingGift />
       </div>
+      
 
       <ConfirmationModal
         isOpen={modalState.isOpen}

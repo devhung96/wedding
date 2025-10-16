@@ -1,0 +1,74 @@
+.wedding-gift {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../assets/images/MaiTrang.jpg") center/cover no-repeat;
+  position: relative;
+  padding: 80px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .gift-content {
+    position: relative;
+    text-align: center;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    p {
+      font-size: 20px;
+      color: #ffffff;
+      margin-bottom: 40px;
+      line-height: 1.6;
+      font-family: "Playfair Display", serif;
+    }
+
+    .gift-button-wrapper {
+      cursor: pointer;
+      padding: 10px;
+      transition: all 0.3s ease;
+
+      .gift-button-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+          color: #fff;
+          cursor: pointer;
+          pointer-events: auto;
+          background: #69a539b8;
+          border: none;
+          border-radius: 50px;
+          align-items: center;
+          gap: 6px;
+          padding: 16px;
+          font-size: 14px;
+          font-weight: 500;
+          transition: all 0.3s;
+
+          &:hover {
+            background: #9cb89a;
+            color: white;
+          }
+
+          &:active {
+            transform: scale(0.98);
+          }
+        }
+      }
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
