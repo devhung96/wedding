@@ -42,8 +42,9 @@
 
   .photo-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
     margin: 0 auto;
     max-width: 900px;
 
@@ -52,10 +53,10 @@
       width: 100%;
       overflow: hidden;
       border-radius: 4px;
-      aspect-ratio: 2/3;
+      aspect-ratio: 3/5; /* ảnh hai bên thấp hơn */
 
       &:nth-child(2) {
-        aspect-ratio: 3/4;
+        aspect-ratio: 2/4; /* ảnh giữa cao hơn */
       }
 
       img {

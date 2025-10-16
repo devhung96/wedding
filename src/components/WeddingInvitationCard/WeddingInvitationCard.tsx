@@ -5,11 +5,6 @@ interface WeddingInvitationCardProps {
   title: string;
   subtitle: string;
   images: string[];
-  eventName: string;
-  eventTime: string;
-  eventDate: string;
-  lunarDate: string;
-  location: string;
 }
 
 const WeddingInvitationCard: React.FC<WeddingInvitationCardProps> = ({

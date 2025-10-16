@@ -25,11 +25,6 @@ function App() {
         title="Thư Mời"
         subtitle="THAM DỰ LỄ CƯỚI CỦA HAI CON CHÚNG TÔI"
         images={[DucHung, MaiTrang, DucHung]}
-        eventName=""
-        eventTime=""
-        eventDate=""
-        lunarDate=""
-        location=""
       />
       <WeddingParty
         title="TIỆC CƯỚI NHÀ GÁI"
