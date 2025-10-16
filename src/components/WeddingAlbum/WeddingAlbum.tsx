@@ -18,7 +18,7 @@ const WeddingAlbum: React.FC<WeddingAlbumProps> = ({ title, images }) => {
         <div className="line-right"></div>
       </div>
 
-      <div className="album-grid">
+      <div className="album-grid offset-right">
         {images.map((image, index) => (
           <div 
             key={index} 

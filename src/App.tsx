@@ -50,10 +50,10 @@ function App() {
       <WeddingAlbum
         title="Album hình cưới"
         images={[
-          { src: DucHung, alt: "Wedding photo 1", className: "large" },
+          { src: DucHung, alt: "Wedding photo 3", className: "large" },
+          { src: MaiTrang, alt: "Wedding photo 4", className: "large" },
           { src: MaiTrang, alt: "Wedding photo 2", className: "large" },
-          { src: DucHung, alt: "Wedding photo 3", className: "small" },
-          { src: MaiTrang, alt: "Wedding photo 4", className: "small" },
+          { src: DucHung, alt: "Wedding photo 1", className: "large" },
         ]}
       />
     </div>
