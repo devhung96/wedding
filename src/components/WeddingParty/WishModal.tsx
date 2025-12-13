@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Modal from '../common/Modal/Modal';
+import { supabase } from '../../lib/supabase';
+import type { Wish } from '../../types/database';
 import './WishModal.scss';
 
 interface WishModalProps {
@@ -12,12 +14,48 @@ export default function WishModal({ isOpen, onClose }: WishModalProps) {
     name: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Handle form submission
-    console.log('Form submitted:', formData);
-    onClose();
+    setIsLoading(true);
+    setError(null);
+    setSuccess(false);
+
+    try {
+      const wishData: Omit<Wish, 'id' | 'created_at'> = {
+        name: formData.name,
+        message: formData.message,
+      };
+
+      const { error: supabaseError } = await supabase
+        .from('wishes')
+        .insert([wishData]);
+
+      if (supabaseError) {
+        throw supabaseError;
+      }
+
+      setSuccess(true);
+      // Reset form
+      setFormData({
+        name: '',
+        message: ''
+      });
+      
+      // Close modal after 1.5 seconds
+      setTimeout(() => {
+        onClose();
+        setSuccess(false);
+      }, 1500);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Có lỗi xảy ra khi gửi lời chúc. Vui lòng thử lại.');
+      console.error('Error saving wish:', err);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -55,8 +93,21 @@ export default function WishModal({ isOpen, onClose }: WishModalProps) {
             rows={4}
           />
         </div>
-        <button type="submit" className="submit-button">
-          Gửi lời chúc 💝
+
+        {error && (
+          <div className="error-message" style={{ color: 'red', marginBottom: '1rem', fontSize: '0.9rem' }}>
+            {error}
+          </div>
+        )}
+
+        {success && (
+          <div className="success-message" style={{ color: 'green', marginBottom: '1rem', fontSize: '0.9rem' }}>
+            ✓ Đã gửi lời chúc thành công!
+          </div>
+        )}
+
+        <button type="submit" className="submit-button" disabled={isLoading}>
+          {isLoading ? 'Đang gửi...' : 'Gửi lời chúc 💝'}
         </button>
       </form>
     </Modal>

@@ -1,0 +1,174 @@
+.wedding-wishes {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  .wishes-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+
+    .title {
+      font-family: var(--font-ephesis);
+      font-size: 2rem;
+      margin: 0;
+      white-space: nowrap;
+      color: #111;
+      letter-spacing: 0.3px;
+    }
+
+    .line-right {
+      height: 1px;
+      background: linear-gradient(to right, #cfcfcf, transparent);
+      flex: 1;
+      margin-left: 0.75rem;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #666;
+    font-size: 0.9375rem;
+    font-family: var(--font-roboto);
+  }
+
+  .error {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #d32f2f;
+    font-size: 0.9375rem;
+    font-family: var(--font-roboto);
+    background: rgba(211, 47, 47, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(211, 47, 47, 0.2);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: #666;
+    font-size: 1rem;
+    font-family: var(--font-roboto);
+    background: linear-gradient(135deg, rgba(255, 245, 250, 0.5) 0%, rgba(255, 250, 255, 0.5) 100%);
+    border-radius: 12px;
+    border: 1px dashed #e0e0e0;
+
+    .empty-icon {
+      font-size: 3rem;
+      margin-bottom: 0.75rem;
+      display: block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    p {
+      margin: 0;
+      line-height: 1.6;
+    }
+  }
+
+  .wishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem 0 1rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .wish-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 255, 0.95) 100%);
+    border: 1px solid rgba(230, 230, 230, 0.8);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.06),
+      0 1px 2px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(-15px) scale(0.98);
+    animation: fadeInDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    position: relative;
+    overflow: hidden;
+
+    // Stagger animation cho mỗi card
+    @for $i from 1 through 20 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.06}s;
+      }
+    }
+
+    &:hover {
+      transform: translateY(-4px) scale(1.005);
+      box-shadow: 
+        0 6px 24px rgba(0, 0, 0, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.06);
+      border-color: rgba(207, 207, 207, 1);
+    }
+
+    .wish-header {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(230, 230, 230, 0.6);
+
+      .wish-name {
+        font-family: var(--font-ephesis);
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #111;
+        line-height: 1.4;
+      }
+    }
+
+    .wish-message {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: #555;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: var(--font-roboto);
+      font-weight: 300;
+      letter-spacing: 0.2px;
+    }
+
+    .wish-decoration {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(255, 240, 245, 0.3) 0%, transparent 70%);
+      border-radius: 0 16px 0 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover .wish-decoration {
+      opacity: 1;
+    }
+  }
+}
+
+// Animation fade in từ trên xuống
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Animation float cho empty icon
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

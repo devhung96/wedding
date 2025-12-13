@@ -5,13 +5,20 @@ import WeddingInvitationCard from './components/WeddingInvitationCard/WeddingInv
 import WeddingParty from './components/WeddingParty/WeddingParty';
 import WeddingFamily from './components/WeddingFamily/WeddingFamily';
 import WeddingAlbum from './components/WeddingAlbum/WeddingAlbum';
-import WeddingGift from './components/WeddingGift/WeddingGift';
+import WeddingWishes from './components/WeddingWishes/WeddingWishes';
 import ConfirmationModal from './components/WeddingParty/ConfirmationModal';
 import WishModal from './components/WeddingParty/WishModal';
 
 // Import images
-import DucHung from "./assets/images/DucHung.jpg";
-import MaiTrang from "./assets/images/MaiTrang.jpg";
+
+import ImgWeddingInvitation1 from "./assets/images/dohaitay-min.jpg";
+import ImgWeddingInvitation2 from "./assets/images/namtaynhau-min.jpg";
+import ImgWeddingInvitation3 from "./assets/images/vocuc-min.jpg";
+
+import AlbumImg1 from "./assets/images/TUAN6632-min.jpg";
+import AlbumImg2 from "./assets/images/TUAN6736-min.jpg";
+import AlbumImg3 from "./assets/images/TUAN6824-min.jpg";
+import AlbumImg4 from "./assets/images/TUAN6953-min.jpg";
 
 function App() {
   const [modalState, setModalState] = useState({
@@ -56,7 +63,7 @@ function App() {
         <WeddingInvitationCard
           title="Thư Mời"
           subtitle="THAM DỰ LỄ CƯỚI CỦA HAI CON CHÚNG TÔI"
-          images={[DucHung, MaiTrang, DucHung]}
+          images={[ImgWeddingInvitation1, ImgWeddingInvitation2, ImgWeddingInvitation3]}
         />
         <WeddingParty
           title="TIỆC CƯỚI NHÀ GÁI"
@@ -79,13 +86,14 @@ function App() {
         <WeddingAlbum
           title="Album hình cưới"
           images={[
-            { src: DucHung, alt: "Wedding photo 3", className: "large" },
-            { src: MaiTrang, alt: "Wedding photo 4", className: "large" },
-            { src: MaiTrang, alt: "Wedding photo 2", className: "large" },
-            { src: DucHung, alt: "Wedding photo 1", className: "large" },
+            { src: AlbumImg1, alt: "Wedding photo 3", className: "large" },
+            { src: AlbumImg2, alt: "Wedding photo 4", className: "large" },
+            { src: AlbumImg3, alt: "Wedding photo 2", className: "large" },
+            { src: AlbumImg4, alt: "Wedding photo 1", className: "large" },
           ]}
         />
-        <WeddingGift />
+        <WeddingWishes />
+        {/* <WeddingGift /> */}
       </div>
       
 
