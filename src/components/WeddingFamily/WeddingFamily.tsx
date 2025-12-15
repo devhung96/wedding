@@ -20,7 +20,7 @@ const WeddingFamily: React.FC = () => {
             <br />
             <br />
           </p>
-          <p>Kiến Thành Đăk R'Lấp Đăk Nông.</p>
+          <p>Thôn 13, Xã Kiến Đức, Tỉnh Lâm Đồng.</p>
         </div>
 
         <div className="family">
@@ -28,7 +28,7 @@ const WeddingFamily: React.FC = () => {
           <p>ÔNG MAI XUÂN THỦY</p>
           <p>BÀ NGUYỄN THỊ THÚY</p>
           <br />
-          <p>Xóm 1 Thôn Thành Công, Xã Eana, Huyện Krongana, Tỉnh DakLak</p>
+          <p>Xóm 1 Thôn Thành Công, Xã Eana, Tỉnh DakLak</p>
         </div>
       </div>
 

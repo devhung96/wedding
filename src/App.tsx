@@ -57,9 +57,9 @@ function App() {
     <>
       <div className="page-view">
         <WeddingInvitation
-          title="Đức Hùng - Trang Mai"
-          time="CHỦ NHẬT - 11H00"
-          date="30.11.2025"
+          title="Đức Hùng - Mai Trang"
+          time="11.01.2026"
+          date="18.01.2026"
         />
         <WeddingFamily />
 
@@ -71,18 +71,18 @@ function App() {
         <WeddingParty
           title="TIỆC CƯỚI NHÀ GÁI"
           time="CHỦ NHẬT | 11H00"
-          date="30.11.2025"
-          lunarDate="(Tức Ngày 15 Tháng 11 Năm Giáp Thìn)"
-          location="Hội trường Ruby - Tầng 4, Trung tâm hội nghị Đại Việt Place"
+          date="11.01.2026"
+          lunarDate="(Tức Ngày 23 Tháng 11 Năm Ất Tỵ)"
+          location="TƯ GIA NHÀ GÁI"
           mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197276!2d106.71127631533417!3d10.777057362124085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8d1bb3%3A0x1b3e2c6b6f3f6f0a!2zxJDhuqFpIFZp4buHdCBQbGFjZQ!5e0!3m2!1svi!2s!4v1620147647447!5m2!1svi!2s"
           onConfirm={() => handleOpenModal('bride')}
         />
         <WeddingParty
           title="TIỆC CƯỚI NHÀ TRAI"
           time="CHỦ NHẬT | 11H00"
-          date="15.12.2024"
-          lunarDate="(Tức Ngày 15 Tháng 11 Năm Giáp Thìn)"
-          location="Hội trường Ruby - Tầng 4, Trung tâm hội nghị Đại Việt Place"
+          date="18.01.2026"
+          lunarDate="(Tức Ngày 30 Tháng 11 Năm Ất Tỵ)"
+          location="TRUNG TÂM HỘI NGHỊ TIỆC CƯỚI HOA HUỆ THÔN 2 XÃ KIẾN ĐỨC LÂM ĐỒNG"
           mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197276!2d106.71127631533417!3d10.777057362124085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8d1bb3%3A0x1b3e2c6b6f3f6f0a!2zxJDhuqFpIFZp4buHdCBQbGFjZQ!5e0!3m2!1svi!2s!4v1620147647447!5m2!1svi!2s"
           onConfirm={() => handleOpenModal('groom')}
         />
