@@ -99,6 +99,11 @@ function App() {
             { src: AlbumImg8, alt: "Cam tay", className: "large", order: 8 },
           ]}
         />
+        <div className="thank-you-section">
+          <h2>THANK YOU!</h2>
+          <p>Rất hân hạnh được đón tiếp!</p>
+          <hr />
+        </div>
 
         {/* <WeddingGift /> */}
       </div>
