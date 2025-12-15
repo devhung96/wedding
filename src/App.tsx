@@ -23,6 +23,8 @@ import AlbumImg6 from "./assets/images/TUAN6632.jpg";
 import AlbumImg7 from "./assets/images/TUAN6736.jpg";
 import AlbumImg8 from "./assets/images/TUAN6824.jpg";
 
+import WeddingWishes from './components/WeddingWishes/WeddingWishes';
+
 function App() {
   const [modalState, setModalState] = useState({
     isOpen: false,
@@ -99,11 +101,13 @@ function App() {
             { src: AlbumImg8, alt: "Cam tay", className: "large", order: 8 },
           ]}
         />
+        <WeddingWishes />
         <div className="thank-you-section">
           <h2>THANK YOU!</h2>
           <p>Rất hân hạnh được đón tiếp!</p>
           <hr />
         </div>
+
 
         {/* <WeddingGift /> */}
       </div>
