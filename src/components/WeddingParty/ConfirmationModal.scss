@@ -24,7 +24,7 @@
     select {
       width: 100%;
       padding: 12px;
-      border: 1px solid #ddd;
+      border: 1px solid #537ec46b;
       border-radius: 8px;
       font-size: 1em;
       transition: all 0.3s ease;
@@ -38,8 +38,7 @@
 
       &:focus {
         outline: none;
-        border-color: #69a539a3;
-        box-shadow: 0 0 0 2px rgba(105, 165, 57, 0.15);
+        border-color: #537ec46b;
         background: #fff;
       }
     }
@@ -70,7 +69,7 @@
   }
 
   .submit-button {
-    background: linear-gradient(135deg, #69a539a3 0%, #447120e8 100%);
+    background: linear-gradient(135deg, #005fbcc9 0%, #005fbcc9 100%);
     color: white;
     border: none;
     padding: 12px 24px;

@@ -15,7 +15,7 @@
     textarea {
       width: 100%;
       padding: 12px;
-      border: 1px solid #ddd;
+      border: 1px solid #537ec46b;
       border-radius: 8px;
       font-size: 16px;
       transition: all 0.3s ease;
@@ -24,8 +24,7 @@
 
       &:focus {
         outline: none;
-        border-color: #69a539;
-        box-shadow: 0 0 0 2px rgba(105, 165, 57, 0.2);
+        border-color: #537ec46b;
       }
 
       &::placeholder {
@@ -42,7 +41,7 @@
   .submit-button {
     width: 100%;
     padding: 14px;
-    background: linear-gradient(135deg, #69a539 0%, #447120 100%);
+    background: linear-gradient(135deg, #005fbcc9 0%, #005fbcc9 100%);
     border: none;
     border-radius: 8px;
     color: white;
@@ -57,7 +56,7 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(105, 165, 57, 0.3);
+      box-shadow: 0 4px 15px #005fbcc9;
     }
 
     &:active {
