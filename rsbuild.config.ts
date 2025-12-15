@@ -4,7 +4,7 @@ import { pluginSass } from "@rsbuild/plugin-sass";
 
 // Load environment variables với prefix VITE_ (tương tự Vite)
 // Theo tài liệu: https://rsbuild.rs/guide/advanced/env-vars#custom-prefix
-const { publicVars } = loadEnv({ prefixes: ['VITE_'] });
+const { publicVars } = loadEnv({ prefixes: ['REACT_APP_'] });
 
 export default defineConfig({
   plugins: [pluginReact(), pluginSass()],

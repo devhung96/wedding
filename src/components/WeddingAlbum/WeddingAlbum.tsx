@@ -7,6 +7,7 @@ interface WeddingAlbumProps {
     src: string;
     alt: string;
     className?: string;
+    order?: number;
   }[];
 }
 
@@ -19,13 +20,13 @@ const WeddingAlbum: React.FC<WeddingAlbumProps> = ({ title, images }) => {
       </div>
 
       <div className="album-grid offset-right">
-        {images.map((image, index) => (
-          <div 
-            key={index} 
+        {images.sort((a, b) => (a.order || 0) - (b.order || 0)).map((image, index) => (
+          <div
+            key={index}
             className={`album-item ${image.className || ''}`}
           >
-            <img 
-              src={image.src} 
+            <img
+              src={image.src}
               alt={image.alt}
               loading="lazy"
             />

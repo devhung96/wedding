@@ -1,7 +1,7 @@
 import React from "react";
 import "./WeddingFamily.scss";
-import ImgChuRe from "../../assets/images/ImgChuRe-min.jpg";
-import ImgCoDau from "../../assets/images/ImgCoDau-min.jpg";
+import ImgChuRe from "../../assets/images/TUAN6506-1.jpg";
+import ImgCoDau from "../../assets/images/TUAN6002-1.jpg";
 
 const WeddingFamily: React.FC = () => {
   return (
@@ -44,9 +44,9 @@ const WeddingFamily: React.FC = () => {
           <h5>Cô Dâu</h5>
           <h3>Mai Trang</h3>
         </div>
-        <div className="couple-image">  
-         <div> <img src={ImgChuRe} alt="Chú rể Đức Hùng" /></div>
-         <div> <img src={ImgCoDau} alt="Cô dâu Mai Trang" /></div>
+        <div className="couple-image">
+          <div> <img src={ImgChuRe} alt="Chú rể Đức Hùng" /></div>
+          <div> <img src={ImgCoDau} alt="Cô dâu Mai Trang" /></div>
         </div>
       </div>
     </section>

@@ -5,20 +5,23 @@ import WeddingInvitationCard from './components/WeddingInvitationCard/WeddingInv
 import WeddingParty from './components/WeddingParty/WeddingParty';
 import WeddingFamily from './components/WeddingFamily/WeddingFamily';
 import WeddingAlbum from './components/WeddingAlbum/WeddingAlbum';
-import WeddingWishes from './components/WeddingWishes/WeddingWishes';
 import ConfirmationModal from './components/WeddingParty/ConfirmationModal';
 import WishModal from './components/WeddingParty/WishModal';
 
 // Import images
 
-import ImgWeddingInvitation1 from "./assets/images/dohaitay-min.jpg";
-import ImgWeddingInvitation2 from "./assets/images/namtaynhau-min.jpg";
-import ImgWeddingInvitation3 from "./assets/images/vocuc-min.jpg";
+import ImgWeddingInvitation1 from "./assets/images/TUAN6716.jpg";
+import ImgWeddingInvitation2 from "./assets/images/TUAN6309.jpg";
+import ImgWeddingInvitation3 from "./assets/images/TUAN6506.jpg";
 
-import AlbumImg1 from "./assets/images/TUAN6632-min.jpg";
-import AlbumImg2 from "./assets/images/TUAN6736-min.jpg";
-import AlbumImg3 from "./assets/images/TUAN6824-min.jpg";
-import AlbumImg4 from "./assets/images/TUAN6953-min.jpg";
+import AlbumImg1 from "./assets/images/TUAN6171.jpg";
+import AlbumImg2 from "./assets/images/TUAN6276.jpg";
+import AlbumImg3 from "./assets/images/TUAN6362.jpg";
+import AlbumImg4 from "./assets/images/TUAN6953.jpg";
+import AlbumImg5 from "./assets/images/TUAN6565.jpg";
+import AlbumImg6 from "./assets/images/TUAN6632.jpg";
+import AlbumImg7 from "./assets/images/TUAN6736.jpg";
+import AlbumImg8 from "./assets/images/TUAN6824.jpg";
 
 function App() {
   const [modalState, setModalState] = useState({
@@ -86,16 +89,20 @@ function App() {
         <WeddingAlbum
           title="Album hình cưới"
           images={[
-            { src: AlbumImg1, alt: "Wedding photo 3", className: "large" },
-            { src: AlbumImg2, alt: "Wedding photo 4", className: "large" },
-            { src: AlbumImg3, alt: "Wedding photo 2", className: "large" },
-            { src: AlbumImg4, alt: "Wedding photo 1", className: "large" },
+            { src: AlbumImg1, alt: "Nam tay nhau", className: "large", order: 1 },
+            { src: AlbumImg2, alt: "Khieu vu", className: "large", order: 2 },
+            { src: AlbumImg7, alt: "Test", className: "large", order: 3 },
+            { src: AlbumImg3, alt: "Wedding photo 2", className: "large", order: 4 },
+            { src: AlbumImg4, alt: "Cầm ô", className: "large", order: 5 },
+            { src: AlbumImg5, alt: "Tua dau", className: "large", order: 6 },
+            { src: AlbumImg6, alt: "Kieu vu 2", className: "large", order: 7 },
+            { src: AlbumImg8, alt: "Cam tay", className: "large", order: 8 },
           ]}
         />
-        <WeddingWishes />
+
         {/* <WeddingGift /> */}
       </div>
-      
+
 
       <ConfirmationModal
         isOpen={modalState.isOpen}
