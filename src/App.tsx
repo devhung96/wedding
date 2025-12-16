@@ -76,7 +76,7 @@ function App() {
           date="11.01.2026"
           lunarDate="(Tức Ngày 23 Tháng 11 Năm Ất Tỵ)"
           location="TƯ GIA NHÀ GÁI"
-          mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197276!2d106.71127631533417!3d10.777057362124085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8d1bb3%3A0x1b3e2c6b6f3f6f0a!2zxJDhuqFpIFZp4buHdCBQbGFjZQ!5e0!3m2!1svi!2s!4v1620147647447!5m2!1svi!2s"
+          mapUrl="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3895.020083815647!2d107.99606707506862!3d12.514827687760125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDMwJzUzLjQiTiAxMDfCsDU5JzU1LjEiRQ!5e0!3m2!1sen!2s!4v1765884369525!5m2!1sen!2s"
           onConfirm={() => handleOpenModal('bride')}
         />
         <WeddingParty
@@ -84,8 +84,8 @@ function App() {
           time="CHỦ NHẬT | 11H00"
           date="18.01.2026"
           lunarDate="(Tức Ngày 30 Tháng 11 Năm Ất Tỵ)"
-          location="TRUNG TÂM HỘI NGHỊ TIỆC CƯỚI HOA HUỆ THÔN 2 XÃ KIẾN ĐỨC LÂM ĐỒNG"
-          mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4241674197276!2d106.71127631533417!3d10.777057362124085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3a9d8d1bb3%3A0x1b3e2c6b6f3f6f0a!2zxJDhuqFpIFZp4buHdCBQbGFjZQ!5e0!3m2!1svi!2s!4v1620147647447!5m2!1svi!2s"
+          location="TRUNG TÂM HỘI NGHỊ TIỆC CƯỚI HOA HUỆ THÔN 2, XÃ KIẾN ĐỨC, TỈNH LÂM ĐỒNG"
+          mapUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d689.8912045060528!2d107.50980793349203!3d12.00118971100049!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3173bb000c108b17%3A0x8818d5be3c136dce!2zTmjDoCBow6BuZyBIb2EgSHXhu4cgaMOhdCBrYXJhb2tlIHNhdSAyMmggxJHDqm0!5e0!3m2!1sen!2s!4v1765883893470!5m2!1sen!2s"
           onConfirm={() => handleOpenModal('groom')}
         />
         <WeddingAlbum
