@@ -1,18 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
-import type { Wish } from '../../types/database';
+import type { Wish, Confirmation } from '../../types/database';
 import './WeddingWishes.scss';
 
+interface DisplayWish {
+  id: string;
+  name: string;
+  message: string;
+  created_at: string;
+  source: 'wish' | 'confirmation';
+}
+
 const WeddingWishes: React.FC = () => {
-  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [wishes, setWishes] = useState<DisplayWish[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchWishes();
+    fetchAllWishes();
     
-    // Subscribe to real-time updates
-    const channel = supabase
+    // Subscribe to real-time updates for wishes
+    const wishesChannel = supabase
       .channel('wishes-changes')
       .on(
         'postgres_changes',
@@ -22,30 +30,86 @@ const WeddingWishes: React.FC = () => {
           table: 'wishes'
         },
         () => {
-          fetchWishes();
+          fetchAllWishes();
+        }
+      )
+      .subscribe();
+
+    // Subscribe to real-time updates for confirmations
+    const confirmationsChannel = supabase
+      .channel('confirmations-changes')
+      .on(
+        'postgres_changes',
+        {
+          event: 'INSERT',
+          schema: 'public',
+          table: 'confirmations'
+        },
+        () => {
+          fetchAllWishes();
         }
       )
       .subscribe();
 
     return () => {
-      supabase.removeChannel(channel);
+      supabase.removeChannel(wishesChannel);
+      supabase.removeChannel(confirmationsChannel);
     };
   }, []);
 
-  const fetchWishes = async () => {
+  const fetchAllWishes = async () => {
     try {
       setIsLoading(true);
-      const { data, error: supabaseError } = await supabase
+      
+      // Fetch wishes
+      const { data: wishesData, error: wishesError } = await supabase
         .from('wishes')
         .select('*')
         .order('created_at', { ascending: false })
         .limit(50);
 
-      if (supabaseError) {
-        throw supabaseError;
+      if (wishesError) {
+        throw wishesError;
       }
 
-      setWishes(data || []);
+      // Fetch confirmations with messages
+      const { data: confirmationsData, error: confirmationsError } = await supabase
+        .from('confirmations')
+        .select('*')
+        .not('message', 'is', null)
+        .order('created_at', { ascending: false })
+        .limit(50);
+
+      if (confirmationsError) {
+        throw confirmationsError;
+      }
+
+      // Combine and transform data
+      const allWishes: DisplayWish[] = [
+        ...(wishesData || []).map((wish: Wish) => ({
+          id: wish.id || '',
+          name: wish.name,
+          message: wish.message,
+          created_at: wish.created_at || '',
+          source: 'wish' as const
+        })),
+        ...(confirmationsData || []).map((confirmation: Confirmation) => ({
+          id: confirmation.id || '',
+          name: confirmation.name,
+          message: confirmation.message || '',
+          created_at: confirmation.created_at || '',
+          source: 'confirmation' as const
+        }))
+      ];
+
+      // Sort by created_at descending
+      allWishes.sort((a, b) => {
+        const dateA = new Date(a.created_at).getTime();
+        const dateB = new Date(b.created_at).getTime();
+        return dateB - dateA;
+      });
+
+      setWishes(allWishes);
       setError(null);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Không thể tải lời chúc');
