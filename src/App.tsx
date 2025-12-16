@@ -10,18 +10,18 @@ import WishModal from './components/WeddingParty/WishModal';
 
 // Import images
 
-import ImgWeddingInvitation1 from "./assets/images/TUAN6716.jpg";
-import ImgWeddingInvitation2 from "./assets/images/TUAN6309.jpg";
-import ImgWeddingInvitation3 from "./assets/images/TUAN6506.jpg";
+import ImgWeddingInvitation1 from "./assets/images/TUAN6716.webp";
+import ImgWeddingInvitation2 from "./assets/images/TUAN6309.webp";
+import ImgWeddingInvitation3 from "./assets/images/TUAN6506.webp";
 
-import AlbumImg1 from "./assets/images/TUAN6171.jpg";
-import AlbumImg2 from "./assets/images/TUAN6276.jpg";
-import AlbumImg3 from "./assets/images/TUAN6362.jpg";
-import AlbumImg4 from "./assets/images/TUAN6953.jpg";
-import AlbumImg5 from "./assets/images/TUAN6565.jpg";
-import AlbumImg6 from "./assets/images/TUAN6632.jpg";
-import AlbumImg7 from "./assets/images/TUAN6736.jpg";
-import AlbumImg8 from "./assets/images/TUAN6824.jpg";
+import AlbumImg1 from "./assets/images/TUAN6171.webp";
+import AlbumImg2 from "./assets/images/TUAN6276.webp";
+import AlbumImg3 from "./assets/images/TUAN6362.webp";
+import AlbumImg4 from "./assets/images/TUAN6953.webp";
+import AlbumImg5 from "./assets/images/TUAN6565.webp";
+import AlbumImg6 from "./assets/images/TUAN6632.webp";
+import AlbumImg7 from "./assets/images/TUAN6736.webp";
+import AlbumImg8 from "./assets/images/TUAN6824.webp";
 
 import WeddingWishes from './components/WeddingWishes/WeddingWishes';
 
