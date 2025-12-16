@@ -32,6 +32,7 @@ function App() {
   });
 
   const [wishModalOpen, setWishModalOpen] = useState(false);
+  const [wishesRefreshTrigger, setWishesRefreshTrigger] = useState(0);
 
   const handleOpenModal = (side: 'bride' | 'groom') => {
     setModalState({
@@ -53,6 +54,11 @@ function App() {
 
   const handleCloseWishModal = () => {
     setWishModalOpen(false);
+  };
+
+  const handleWishSuccess = () => {
+    // Trigger refresh in WeddingWishes
+    setWishesRefreshTrigger(prev => prev + 1);
   };
 
   return (
@@ -101,7 +107,7 @@ function App() {
             { src: AlbumImg8, alt: "Cam tay", className: "large", order: 8 },
           ]}
         />
-        <WeddingWishes />
+        <WeddingWishes refreshTrigger={wishesRefreshTrigger} />
         <div className="thank-you-section">
           <h2>THANK YOU!</h2>
           <p>Rất hân hạnh được đón tiếp!</p>
@@ -121,6 +127,7 @@ function App() {
       <WishModal
         isOpen={wishModalOpen}
         onClose={handleCloseWishModal}
+        onSuccess={handleWishSuccess}
       />
       <div className="floating-button">
         <button onClick={handleOpenWishModal}>

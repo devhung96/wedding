@@ -7,9 +7,10 @@ import './WishModal.scss';
 interface WishModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onSuccess?: () => void;
 }
 
-export default function WishModal({ isOpen, onClose }: WishModalProps) {
+export default function WishModal({ isOpen, onClose, onSuccess }: WishModalProps) {
   const [formData, setFormData] = useState({
     name: '',
     message: ''
@@ -44,6 +45,11 @@ export default function WishModal({ isOpen, onClose }: WishModalProps) {
         name: '',
         message: ''
       });
+      
+      // Trigger refresh callback immediately
+      if (onSuccess) {
+        onSuccess();
+      }
       
       // Close modal after 1.5 seconds
       setTimeout(() => {

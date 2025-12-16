@@ -11,7 +11,11 @@ interface DisplayWish {
   source: 'wish' | 'confirmation';
 }
 
-const WeddingWishes: React.FC = () => {
+interface WeddingWishesProps {
+  refreshTrigger?: number;
+}
+
+const WeddingWishes: React.FC<WeddingWishesProps> = ({ refreshTrigger }) => {
   const [wishes, setWishes] = useState<DisplayWish[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -56,6 +60,13 @@ const WeddingWishes: React.FC = () => {
       supabase.removeChannel(confirmationsChannel);
     };
   }, []);
+
+  // Refresh when refreshTrigger changes
+  useEffect(() => {
+    if (refreshTrigger !== undefined && refreshTrigger > 0) {
+      fetchAllWishes();
+    }
+  }, [refreshTrigger]);
 
   const fetchAllWishes = async () => {
     try {
