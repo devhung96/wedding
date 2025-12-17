@@ -124,11 +124,11 @@ function App() {
         <div className="welcome-screen">
           <div className="welcome-content">
             <div className="welcome-ornament">💍</div>
-            <p className="welcome-subtitle">Trân trọng kính mời</p>
             <h1 className="welcome-title">Đức Hùng & Mai Trang</h1>
+            <p className="welcome-subtitle">Trân trọng kính mời</p>
             <p className="welcome-date">11.01.2026 & 18.01.2026</p>
             <button className="welcome-button" onClick={handleOpenInvitation}>
-              <span>Mở Thiệp Cưới</span>
+              <span>MỞ THIỆP CƯỚI</span>
               <span className="button-icon">💌</span>
             </button>
           </div>
