@@ -28,6 +28,7 @@ import WeddingWishes from "./components/WeddingWishes/WeddingWishes";
 import WeddingSong from "./assets/audio/ducphuc.mp3";
 
 function App() {
+  const [showWelcome, setShowWelcome] = useState(true);
   const [modalState, setModalState] = useState({
     isOpen: false,
     side: "bride" as "bride" | "groom",
@@ -39,6 +40,28 @@ function App() {
   const [volume, setVolume] = useState(0.5);
   const [isHovered, setIsHovered] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const handleOpenInvitation = () => {
+    setShowWelcome(false);
+    // Play audio after user interaction
+    const audio = audioRef.current;
+    if (audio) {
+      audio.volume = 0;
+      audio.play().then(() => {
+        // Fade in effect
+        let vol = 0;
+        const fadeIn = setInterval(() => {
+          vol += 0.05;
+          if (vol >= volume) {
+            audio.volume = volume;
+            clearInterval(fadeIn);
+          } else {
+            audio.volume = vol;
+          }
+        }, 100);
+      }).catch(() => {});
+    }
+  };
 
   const handleOpenModal = (side: "bride" | "groom") => {
     setModalState({
@@ -67,18 +90,7 @@ function App() {
     setWishesRefreshTrigger((prev) => prev + 1);
   };
 
-  useEffect(() => {
-    const enableAudio = () => {
-      audioRef.current?.play().catch(() => {});
-      window.removeEventListener("click", enableAudio);
-    };
 
-    window.addEventListener("click", enableAudio);
-
-    return () => {
-      window.removeEventListener("click", enableAudio);
-    };
-  }, []);
   // Update volume when it changes
   useEffect(() => {
     const audio = audioRef.current;
@@ -107,6 +119,22 @@ function App() {
 
   return (
     <>
+      {/* Welcome Screen */}
+      {showWelcome && (
+        <div className="welcome-screen">
+          <div className="welcome-content">
+            <div className="welcome-ornament">💍</div>
+            <p className="welcome-subtitle">Trân trọng kính mời</p>
+            <h1 className="welcome-title">Đức Hùng & Mai Trang</h1>
+            <p className="welcome-date">11.01.2026 & 18.01.2026</p>
+            <button className="welcome-button" onClick={handleOpenInvitation}>
+              <span>Mở Thiệp Cưới</span>
+              <span className="button-icon">💌</span>
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Music Player */}
       <audio
         ref={audioRef}
