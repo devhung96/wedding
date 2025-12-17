@@ -6,6 +6,183 @@
   z-index: 1;
 }
 
+.music-control {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  pointer-events: none;
+
+  .music-control-container {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 50px;
+    padding: 8px;
+    gap: 0;
+    width: 40px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.7);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    &.expanded {
+      width: 180px;
+      gap: 12px;
+      padding: 8px 12px;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .music-icon-button {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: white;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .volume-slider-wrapper {
+      flex: 1;
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.expanded .volume-slider-wrapper {
+      opacity: 1;
+      width: 100%;
+    }
+
+    .volume-slider {
+      width: 100%;
+      height: 16px;
+      border-radius: 2px;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+      align-self: center;
+      position: relative;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s ease;
+        border: none;
+        margin-top: -4.5px;
+      }
+
+      &::-webkit-slider-thumb:hover {
+        transform: scale(1.3);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+      }
+
+      &::-moz-range-thumb {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s ease;
+      }
+
+      &::-moz-range-thumb:hover {
+        transform: scale(1.3);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+      }
+
+      &::-webkit-slider-runnable-track {
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &::-moz-range-track {
+        height: 3px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      &::-ms-thumb {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffffff;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      }
+
+      &::-ms-track {
+        height: 3px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    @media (max-width: 480px) {
+      width: 36px;
+      top: 15px;
+      right: 15px;
+      padding: 6px;
+
+      &.expanded {
+        width: 160px;
+        padding: 6px 10px;
+      }
+
+      .music-icon-button {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
 .floating-button {
   position: fixed;
   bottom: 20px;
