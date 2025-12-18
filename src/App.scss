@@ -10,7 +10,12 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  animation: fadeIn 0.5s ease;
+
+  &.exiting {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+  }
 
   &::before {
     content: '';
@@ -131,6 +136,14 @@
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .music-control {
@@ -139,6 +152,12 @@
   right: 20px;
   z-index: 1000;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease 0.3s;
+
+  &.visible {
+    opacity: 1;
+  }
 
   .music-control-container {
     display: flex;
@@ -321,6 +340,14 @@
   left: 20px;
   z-index: 999;
   pointer-events: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   button {
     background: #005fbc78;

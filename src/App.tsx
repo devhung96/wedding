@@ -29,6 +29,7 @@ import WeddingSong from "./assets/audio/ducphuc.mp3";
 
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
+  const [isWelcomeExiting, setIsWelcomeExiting] = useState(false);
   const [modalState, setModalState] = useState({
     isOpen: false,
     side: "bride" as "bride" | "groom",
@@ -42,7 +43,12 @@ function App() {
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const handleOpenInvitation = () => {
-    setShowWelcome(false);
+    // Start exit animation
+    setIsWelcomeExiting(true);
+    // Remove welcome screen after animation completes
+    setTimeout(() => {
+      setShowWelcome(false);
+    }, 600);
     // Play audio after user interaction
     const audio = audioRef.current;
     if (audio) {
@@ -121,7 +127,7 @@ function App() {
     <>
       {/* Welcome Screen */}
       {showWelcome && (
-        <div className="welcome-screen">
+        <div className={`welcome-screen ${isWelcomeExiting ? 'exiting' : ''}`}>
           <div className="welcome-content">
             <div className="welcome-ornament">💍</div>
             <h1 className="welcome-title">Đức Hùng & Mai Trang</h1>
@@ -147,7 +153,7 @@ function App() {
 
       {/* Music Control Button */}
       <div
-        className="music-control"
+        className={`music-control ${isWelcomeExiting || !showWelcome ? 'visible' : ''}`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -184,7 +190,7 @@ function App() {
         </div>
       </div>
 
-      <div className="page-view">
+      <div className={`page-view ${isWelcomeExiting || !showWelcome ? 'visible' : ''}`}>
         <WeddingInvitation
           title="Đức Hùng - Mai Trang"
           time="11.01.2026"
@@ -262,7 +268,7 @@ function App() {
         onClose={handleCloseWishModal}
         onSuccess={handleWishSuccess}
       />
-      <div className="floating-button">
+      <div className={`floating-button ${isWelcomeExiting || !showWelcome ? 'visible' : ''}`}>
         <button onClick={handleOpenWishModal}>Gửi lời chúc</button>
       </div>
     </>
