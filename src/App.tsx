@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./App.scss";
+import { Turnstile } from "@marsidev/react-turnstile";
 import WeddingInvitation from "./components/WeddingInvitation/WeddingInvitation";
 import WeddingInvitationCard from "./components/WeddingInvitationCard/WeddingInvitationCard";
 import WeddingParty from "./components/WeddingParty/WeddingParty";
@@ -40,7 +41,10 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.5);
   const [isHovered, setIsHovered] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
+
+  const turnstileSiteKey = import.meta.env.REACT_APP_TURNSTILE_SITE_KEY || "";
 
   const handleOpenInvitation = () => {
     // Start exit animation
@@ -271,6 +275,23 @@ function App() {
       <div className={`floating-button ${isWelcomeExiting || !showWelcome ? 'visible' : ''}`}>
         <button onClick={handleOpenWishModal}>Gửi lời chúc</button>
       </div>
+
+      {/* Cloudflare Turnstile - Invisible anti-bot verification */}
+      {turnstileSiteKey && (
+        <Turnstile
+          siteKey={turnstileSiteKey}
+          options={{
+            action: "pre_clearance",
+            appearance: "always",
+            theme: "light",
+          }}
+          style={{textAlign:"center", zIndex: 9999}}
+          onSuccess={(token) => {
+            setTurnstileToken(token);
+            console.log("Turnstile xác thực thành công!");
+          }}
+        />
+      )}
     </>
   );
 }

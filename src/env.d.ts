@@ -13,6 +13,7 @@ declare module '*.svg?react' {
 interface ImportMetaEnv {
   readonly REACT_APP_SUPABASE_URL: string;
   readonly REACT_APP_SUPABASE_ANON_KEY: string;
+  readonly REACT_APP_TURNSTILE_SITE_KEY: string;
 }
 
 interface ImportMeta {
